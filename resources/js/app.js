@@ -1,7 +1,7 @@
 import "@tailwindplus/elements";
 
 import Swal from "sweetalert2";
-import 'sweetalert2/dist/sweetalert2.min.css';
+import "sweetalert2/dist/sweetalert2.min.css";
 window.Swal = Swal;
 
 document.querySelectorAll(".delete-form").forEach((form) => {
@@ -13,3 +13,8 @@ document.querySelectorAll(".delete-form").forEach((form) => {
         }
     });
 });
+
+if (document.getElementById("register-form")) {
+    import("./modules/register.js");
+}
+
