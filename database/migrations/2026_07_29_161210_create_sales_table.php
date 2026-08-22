@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('sales', function (Blueprint $table) {
             $table->id();
-            $table->string('user_id');
-            $table->string('total');
+            $table->foreignId('commerce_id')->constrained()->cascadeOnDelete(); // Aislamiento multi-tenant
+            $table->foreignId('user_id')->constrained(); // Vendedor (foreign key real)
+            $table->decimal('total', 10, 2)->default(0.00); // Cambio de string a decimal para cálculos
             $table->date('sale_date');
             $table->timestamps();
         });

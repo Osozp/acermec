@@ -5,7 +5,7 @@
         <!-- Session Status -->
         <x-auth-session-status class="text-center" :status="session('status')" />
 
-       
+
 
         <a href="{{ route('auth.google') }}"
             class="w-full flex items-center justify-center gap-3 border border-gray-300 bg-white text-gray-700 font-medium py-2.5 px-4 rounded-lg hover:bg-gray-50 transition shadow-sm">
@@ -57,13 +57,13 @@
 
                 <!-- Name -->
                 <div>
-                    <label for="name" class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">
-                        {{ __('Name') }}
+                    <label for="commerce_name" class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">
+                        {{ __('Nombre del Comercio') }}
                     </label>
-                    <input id="name" name="name" type="text" value="{{ old('name') }}" required
-                        placeholder="{{ __('Full name') }}"
+                    <input id="commerce_name" name="commerce_name" type="text" value="{{ old('name') }}" required
+                        placeholder="{{ __('Nombre del comercio') }}"
                         class="w-full rounded-md border border-zinc-300 px-3 py-2 text-sm dark:bg-zinc-800 dark:border-zinc-700 dark:text-white" />
-                    @error('name')
+                    @error('commerce_name')
                         <span class="text-xs text-red-500 mt-1 block">{{ $message }}</span>
                     @enderror
                 </div>

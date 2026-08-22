@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('product_purchase', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('purchase_id')->constrained()->onDelete('cascade');
-            $table->foreignId('product_id')->constrained()->onDelete('cascade');
+            $table->foreignId('purchase_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('product_id')->constrained()->cascadeOnDelete();
             $table->integer('quantity');
-            $table->decimal('price', 10, 2); // El precio al que se compró en ese momento
-            $table->decimal('selling_price', 10, 2);
+            $table->decimal('price', 10, 2); // Precio al que se compró
+            $table->decimal('selling_price', 10, 2)->nullable(); // Precio de venta sugerido
             $table->timestamps();
         });
     }
