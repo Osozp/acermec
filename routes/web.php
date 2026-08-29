@@ -15,6 +15,12 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::view('dashboard', 'dashboard')->name('dashboard');
 });
 
+Route::middleware(['auth'])->group(function () {
+    Route::get('/subscription/expired', function () {
+        return view('subscription.expired');
+    })->name('subscription.expired');
+});
+
 Route::post('/check-email', function (Request $request) {
 
     $request->validate([

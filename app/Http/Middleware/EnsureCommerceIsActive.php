@@ -10,6 +10,10 @@ class EnsureCommerceIsActive
 {
     public function handle(Request $request, Closure $next): Response
     {
+        if ($request->routeIs('subscription.expired')) {
+            return $next($request);
+        }
+        
         $user = $request->user();
 
         // Si es super_admin, pasa sin restricciones
