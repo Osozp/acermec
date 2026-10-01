@@ -13,7 +13,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::All();
+        $categories = Category::all();
         return view('admin.categories.index', compact('categories'));
     }
 
@@ -36,7 +36,8 @@ class CategoryController extends Controller
 
         Category::create($data);
 
-        return redirect()->route('admin.categories.index');
+        return redirect()->route('admin.categories.index')
+            ->with('success', 'Categoria creada correctamnete');
     }
 
     /**

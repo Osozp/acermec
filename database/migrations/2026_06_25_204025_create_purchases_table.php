@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('purchases', function (Blueprint $table) {
             $table->id();
-            $table->decimal('total',10,2);
+            $table->foreignId('commerce_id')->constrained()->cascadeOnDelete();
+            $table->string('status')->default('completed');
+            $table->decimal('total', 10, 2);
             $table->dateTime('purchase_date');
             $table->timestamps();
         });

@@ -69,15 +69,17 @@
                                 </td>
                                 <td class="px-6 py-4">
                                     <div class="inline-flex rounded-lg shadow-xs -space-x-px" role="group">
-                                        <a href="{{ route('admin.categories.edit', $category) }}" class="bg-yellow-500 p-1 rounded-l-lg">Editar</a>
-                                        <form action="{{ route('admin.categories.destroy', $category) }}" method="POST" class="delete-form bg-red-500 p-1 rounded-e-lg text-white">
+                                        <a href="{{ route('admin.categories.edit', $category) }}"
+                                            class="bg-yellow-500 p-1 rounded-l-lg">Editar</a>
+                                        <form action="{{ route('admin.categories.destroy', $category) }}" method="POST"
+                                            class="delete-form bg-red-500 p-1 rounded-e-lg text-white">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit">
                                                 Eliminar
-                                            </button>   
+                                            </button>
                                         </form>
-                                        
+
                                         {{-- <button type="button"
                                             class="text-body bg-neutral-primary-soft border border-default hover:bg-neutral-secondary-medium hover:text-heading focus:ring-3 focus:ring-neutral-tertiary-soft font-medium leading-5 rounded-s-base text-sm px-3 py-2 focus:outline-none">
                                             Editar
@@ -147,7 +149,13 @@
                 </ul>
             </nav>
         </div>
-       
+
     </section>
+
+    @if (session('success'))
+        <div class="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50" role="alert">
+            {{ session('success') }}
+        </div>
+    @endif
 
 </x-layouts::admin>

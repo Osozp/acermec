@@ -25,5 +25,8 @@
         @endpersist
 
         @fluxScripts
+
+        @stack('scripts')
+
     </body>
 </html>

@@ -5,9 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Registrate-SAScomida</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
+<body class="h-dvh bg-gray-200">
+    <div class="flex flex-col items-center justify-center h-full gap-4">
+        <h1 class="text-3xl font-bold text-blue-900">Bienvenido a SAScomida</h1>
+        <p class="text-lg text-blue-900">Por favor, inicia sesión para continuar.</p>
+        <a href="{{ route('login') }}"
+            class="px-4 py-2 text-white bg-blue-900 rounded hover:bg-blue-800">Iniciar Sesión</a>
+    </div>
+</body>
 
 <body class="text-blue-900 bg-gray-200">
     <section class="w-full bg-teal-300 h-10 py-2 px-6 ">
